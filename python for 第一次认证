@@ -1,0 +1,32 @@
+## 第一题相反数：
+暴力枚举的时间复杂度为O(n^2), 通过排序或者集合查找可以节省时间
+## 排序：
+N = int(input())
+a = list(map(int, input().split()))
+a.sort()
+i = 0
+j = N - 1
+count = 0
+while i < j:
+    if a[i] + a[j] == 0:
+        count += 1
+        i += 1
+        j -= 1
+    elif a[i] + a[j] > 0:
+        j -= 1
+    else:
+        i += 1
+
+print(count)
+
+## 集合查找
+N = int(input())
+s = set(map(int, input().split()))
+count = 0
+for i in s:
+    if i < 0:
+        continue
+    if -i in s:
+        count += 1
+
+print(count)
