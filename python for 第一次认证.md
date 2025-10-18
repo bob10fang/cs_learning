@@ -26,12 +26,12 @@ print(count)
 ## 集合查找
 
 N = int(input())
-s = set(map(int, input().split()))
+ = set(map(int, input().split()))
 count = 0
-for i in s:
+for i in :
     if i < 0:
         continue
-    if -i in s:
+    if -i in :
         count += 1
 
 print(count)
